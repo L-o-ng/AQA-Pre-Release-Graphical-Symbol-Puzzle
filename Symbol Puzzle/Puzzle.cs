@@ -143,63 +143,63 @@ namespace Symbol_Puzzle
         }
         
 
-        public virtual int AttemptPuzzle()
-        {
-            bool Finished = false;
-            while (!Finished)
-            {
-                DisplayPuzzle();
-                Console.WriteLine("Current score: " + Score);
-                bool Valid = false;
-                int Row = -1;
-                while (!Valid)
-                {
-                    Console.Write("Enter row number: ");
-                    try
-                    {
-                        Row = Convert.ToInt32(Console.ReadLine());
-                        Valid = true;
-                    }
-                    catch
-                    {
-                    }
-                }
-                int Column = -1;
-                Valid = false;
-                while (!Valid)
-                {
-                    Console.Write("Enter column number: ");
-                    try
-                    {
-                        Column = Convert.ToInt32(Console.ReadLine());
-                        Valid = true;
-                    }
-                    catch
-                    {
-                    }
-                }
-                string Symbol = GetSymbolFromUser();
-                SymbolsLeft -= 1;
-                Cell CurrentCell = GetCell(Row, Column);
-                if (CurrentCell.CheckSymbolAllowed(Symbol))
-                {
-                    CurrentCell.ChangeSymbolInCell(Symbol);
-                    int AmountToAddToScore = CheckForMatchWithPattern(Row, Column);
-                    if (AmountToAddToScore > 0)
-                    {
-                        Score += AmountToAddToScore;
-                    }
-                }
-                if (SymbolsLeft == 0)
-                {
-                    Finished = true;
-                }
-            }
-            Console.WriteLine();
-            DisplayPuzzle();
-            Console.WriteLine();
-            return Score;
-        }
+        //public virtual int AttemptPuzzle()
+        //{
+        //    bool Finished = false;
+        //    while (!Finished)
+        //    {
+        //        DisplayPuzzle();
+        //        Console.WriteLine("Current score: " + Score);
+        //        bool Valid = false;
+        //        int Row = -1;
+        //        while (!Valid)
+        //        {
+        //            Console.Write("Enter row number: ");
+        //            try
+        //            {
+        //                Row = Convert.ToInt32(Console.ReadLine());
+        //                Valid = true;
+        //            }
+        //            catch
+        //            {
+        //            }
+        //        }
+        //        int Column = -1;
+        //        Valid = false;
+        //        while (!Valid)
+        //        {
+        //            Console.Write("Enter column number: ");
+        //            try
+        //            {
+        //                Column = Convert.ToInt32(Console.ReadLine());
+        //                Valid = true;
+        //            }
+        //            catch
+        //            {
+        //            }
+        //        }
+        //        string Symbol = GetSymbolFromUser();
+        //        SymbolsLeft -= 1;
+        //        Cell CurrentCell = GetCell(Row, Column);
+        //        if (CurrentCell.CheckSymbolAllowed(Symbol))
+        //        {
+        //            CurrentCell.ChangeSymbolInCell(Symbol);
+        //            int AmountToAddToScore = CheckForMatchWithPattern(Row, Column);
+        //            if (AmountToAddToScore > 0)
+        //            {
+        //                Score += AmountToAddToScore;
+        //            }
+        //        }
+        //        if (SymbolsLeft == 0)
+        //        {
+        //            Finished = true;
+        //        }
+        //    }
+        //    Console.WriteLine();
+        //    DisplayPuzzle();
+        //    Console.WriteLine();
+        //    return Score;
+        //}
 
         public Cell GetCell(int Row, int Column)
         {
@@ -250,54 +250,54 @@ namespace Symbol_Puzzle
             return 0;
         }
 
-        private string GetSymbolFromUser()
-        {
-            string Symbol = "";
-            while (!AllowedSymbols.Contains(Symbol))
-            {
-                Console.Write("Enter symbol: ");
-                Symbol = Console.ReadLine();
-            }
-            return Symbol;
-        }
+        //private string GetSymbolFromUser()
+        //{
+        //    string Symbol = "";
+        //    while (!AllowedSymbols.Contains(Symbol))
+        //    {
+        //        Console.Write("Enter symbol: ");
+        //        Symbol = Console.ReadLine();
+        //    }
+        //    return Symbol;
+        //}
 
-        private string CreateHorizontalLine()
-        {
-            string Line = "  ";
-            for (var Count = 1; Count <= GridSize * 2 + 1; Count++)
-            {
-                Line += "-";
-            }
-            return Line;
-        }
+        //private string CreateHorizontalLine()
+        //{
+        //    string Line = "  ";
+        //    for (var Count = 1; Count <= GridSize * 2 + 1; Count++)
+        //    {
+        //        Line += "-";
+        //    }
+        //    return Line;
+        //}
 
-        public virtual void DisplayPuzzle()
-        {
-            Console.WriteLine();
-            if (GridSize < 10)
-            {
-                Console.Write("  ");
-                for (var Count = 1; Count <= GridSize; Count++)
-                {
-                    Console.Write(" " + Count);
-                }
-            }
-            Console.WriteLine();
-            Console.WriteLine(CreateHorizontalLine());
-            for (var Count = 0; Count < Grid.Count(); Count++)
-            {
-                if (Count % GridSize == 0 && GridSize < 10)
-                {
-                    Console.Write((GridSize - ((Count + 1) / GridSize)) + " ");
-                }
-                Console.Write("|" + Grid[Count].GetSymbol());
-                if ((Count + 1) % GridSize == 0)
-                {
-                    Console.WriteLine("|");
-                    Console.WriteLine(CreateHorizontalLine());
-                }
-            }
-        }
+        //public virtual void DisplayPuzzle()
+        //{
+        //    Console.WriteLine();
+        //    if (GridSize < 10)
+        //    {
+        //        Console.Write("  ");
+        //        for (var Count = 1; Count <= GridSize; Count++)
+        //        {
+        //            Console.Write(" " + Count);
+        //        }
+        //    }
+        //    Console.WriteLine();
+        //    Console.WriteLine(CreateHorizontalLine());
+        //    for (var Count = 0; Count < Grid.Count(); Count++)
+        //    {
+        //        if (Count % GridSize == 0 && GridSize < 10)
+        //        {
+        //            Console.Write((GridSize - ((Count + 1) / GridSize)) + " ");
+        //        }
+        //        Console.Write("|" + Grid[Count].GetSymbol());
+        //        if ((Count + 1) % GridSize == 0)
+        //        {
+        //            Console.WriteLine("|");
+        //            Console.WriteLine(CreateHorizontalLine());
+        //        }
+        //    }
+        //}
     }
 
     public class Pattern

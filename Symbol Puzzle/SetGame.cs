@@ -24,7 +24,5 @@ namespace Symbol_Puzzle
                 puzzleDisplay.ShowDialog();
             }
         }
-
-
     }
 }
