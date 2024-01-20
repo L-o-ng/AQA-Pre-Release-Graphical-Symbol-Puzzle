@@ -61,7 +61,8 @@ namespace Symbol_Puzzle
                         Name = Convert.ToString(index)
                     });
                     buttons[index].Click += new EventHandler(b_Click);
-                    tlp_puzzle.Controls.Add(buttons[index++]);
+                    tlp_puzzle.Controls.Add(buttons[index]);
+                    index++;
                 }
             }
 
