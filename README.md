@@ -1,3 +1,14 @@
+# Symbol Puzzle
+
+## Before:
 <html><img src="https://i.imgur.com/W0bOdSB.png" /img></html>
-This is a version of this year's AQA Computer Science A-Level Pre-release code, Symbol Puzzle, with a GUI built in Windows Forms.
-The classes provided in the skeleton code are as untouched as reasonably possible, with the only changes being making some fields public and removing unnecessary console references.
+
+## After:
+<html><img src="https://i.imgur.com/x1iBsGD.png" /img></html>
+This is a version of this year's AQA Computer Science A-Level Pre-release code, Symbol Puzzle, with a GUI built in Windows Forms. It has some minimal changes to the skeleton code classes to make it work smoothly with the forms environment.</br>
+
+## Class Changes
+Puzzle: Commented out unused console-related methods and made properties public.</br>
+Pattern: No changes.</br>
+Cell: No changes.</br>
+BlockedCell: No changes.
